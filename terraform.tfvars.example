@@ -1,0 +1,17 @@
+vpc_cidr             = "10.0.0.0/16"
+vpc_name             = "devops_proj_1_vpc"
+cidr_public_subnet   = ["10.0.1.0/24", "10.0.2.0/24"]
+ap_availability_zone = ["ap-south-1a", "ap-south-1b"]
+cidr_private_subnet  = ["10.0.3.0/24", "10.0.4.0/24"]
+
+
+public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGU0Ul2JBnOYEDPfdErBk/P6ZxMxffXFNAZAcK58QNzC MD. SAIFUDDIN@LAPTOP-NAGPU8K5"
+key_name = "devops_proj1"
+ec2_ami_id = "ami-07f07a6e1060cd2a8"
+
+
+
+
+#key name- devops_proj1.pub
+
+#t2.micro

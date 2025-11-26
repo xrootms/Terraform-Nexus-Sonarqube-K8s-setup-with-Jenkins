@@ -18,8 +18,8 @@ Before Running Terraform, Make sure you have the following prerequisites ready:
 
 ####  Clone the repo:
    ```bash
-   git clone https://github.com/xrootms/terraform-jenkins-setup.git
-   cd terraform-aws-vpc-ec2
+   git clone https://github.com/xrootms/Terraform-Nexus-SonarQube-Kubeadm-setup.git
+   cd Terraform-Nexus-SonarQube-Kubeadm-setup
    ```
 
 #### 2. Copy and edit variables: (Update variable values as needed — VPC, CIDR, public key, region, etc.)

@@ -1,14 +1,15 @@
 # Automated Terraform CI/CD Pipeline with Checkov Security Scanning (Jenkins)
 This project focuses on building a fully automated **Infrastructure-as-Code** deployment pipeline using Terraform, integrated with Jenkins CI/CD and Checkov security scanning.
 
-## IaC Overview
+## Overview
+**IaC (Terraform)** 
 The pipeline provisions a complete AWS infrastructure stack that includes:
 
 - ➡️ A custom VPC with public subnets, Internet Gateway, and route tables
 - ➡️ Security Groups for SonarQube, Nexus, and Kubernetes cluster nodes
 - ➡️ EC2 instances for SonarQube, Nexus Repository Manager, and Kubeadm master/worker nodes (with User Data installation script)
 
-## Pipeline Overview
+**Pipeline (Jenkins)**
 The Jenkins pipeline automates the following stages:
 
 - 1️⃣ Git Checkout - Clones the Terraform repository from GitHub using Jenkins credentials

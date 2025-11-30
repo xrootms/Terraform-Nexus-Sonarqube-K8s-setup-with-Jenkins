@@ -101,9 +101,34 @@ pipeline {
               }
             }
         }*/
-        
     }
-}
+    post {
+            always {
+                script {
+                    def job = env.JOB_NAME 
+                    def build = env.BUILD_NUMBER 
+                    def status = currentBuild.currentResult
+                    
+                    def body = """
+                    <html> 
+                    <body> 
+                       <h2>${job} - Build #${build}</h2> 
+                       <p>Status: <b>${status}</b></p> 
+                       <p>Check console log: <a href="${env.BUILD_URL}">Click here</a></p> 
+                     </body> 
+                     </html> 
+                     """
+                     emailext( 
+                         to: "mdsaifuddin.ek@gmail.com",
+                         subject: "Build #${build} - ${status}",
+                         body: body,
+                         mimeType: "text/xml",
+                         attachmentsPattern: "**/checkov-report.xml"
+                          )
+            }
+        }
+    }
+ }
 
 
 ```

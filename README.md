@@ -138,7 +138,10 @@ pipeline {
 
 ```
 
-### Pipeline Diagram
+### clicking Build Now 
+
+
+
 
 
 ### Verify the Setup

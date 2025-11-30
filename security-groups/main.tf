@@ -1,6 +1,5 @@
 variable "ec2_sg_name" {}
 variable "vpc_id" {}
-variable "ec2_jenkins_sg_name" {}
 variable "ec2_sonar_sg_name" {}
 variable "ec2_nexus_sg_name" {}
 variable "sg_ports" { default = [22, 80, 443] }
@@ -20,9 +19,6 @@ output "sg_ec2_sg_ssh_http_https_id" {
   value = aws_security_group.ec2_sg_ssh_http_https.id
 }
 
-output "sg_ec2_jenkins_port_8080_id" {
-  value = aws_security_group.ec2_jenkins_port_8080.id
-}
 
 output "sg_ec2_sonar_port_9000_id" {
   value = aws_security_group.ec2_sonar_port_9000.id
@@ -69,21 +65,6 @@ resource "aws_security_group_rule" "sg_ingress" {
 }
 
 
-#----SG for jenkins port 8080----
-resource "aws_security_group" "ec2_jenkins_port_8080" {
-  name        = var.ec2_jenkins_sg_name
-  description = "Enable the Port 8080 for jenkins"
-  vpc_id      = var.vpc_id
-
-  ingress {
-    from_port   = 8080
-    to_port     = 8080
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]                                # security_groups = [ALB Security Group ID] ,Only ALB can reach Jenkins:8080
-    description = "Allow 8080 port to access jenkins from anywhere"
-  }
-  tags = { Name = "Jenkins SG: 8080" }
-}
 
 #----SG for sonar port 9000----
 resource "aws_security_group" "ec2_sonar_port_9000" {

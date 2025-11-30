@@ -18,17 +18,6 @@ module "networking" {
 #   k8s_cluster_sg_name = "SG for k8s to enable 465, 30000-32767, 25, 3000-10000 & 6443"
 # }
 
-# module "jenkins" {
-#   source                    = "./jenkins"
-#   ami_id                    = var.ec2_ami_id
-#   instance_type             = "t2.micro"
-#   tag_name                  = "Jenkins:Ubuntu 22.04 EC2"
-#   subnet_id                 = tolist(module.networking.devops_proj_1_public_subnets_id)[0]
-#   sg_for_jenkins            = [module.security_groups.sg_ec2_sg_ssh_http_https_id, module.security_groups.sg_ec2_jenkins_port_8080_id]
-#   enable_public_ip_address  = true
-#   user_data_install_jenkins = templatefile("./jenkins/jenkins-runner-script/jenkins-installer.sh", {})
-#   key_name                  = aws_key_pair.main_key.key_name
-# }
 
 # module "sonar" {
 #   source                    = "./sonar"

@@ -1,6 +1,7 @@
 # Automated Terraform CI/CD Pipeline with Checkov Security Scanning (Jenkins)
 This project focuses on building a fully automated `Infrastructure-as-Code` deployment pipeline using Terraform, integrated with `Jenkins CI/CD` and `Checkov` security scanning.
 
+### Diagram
 <p align="center">
   <img src="./doc/image/tf.drawio.jpg" alt="LEMP Diagram" width="800">
 </p>
@@ -137,29 +138,17 @@ pipeline {
 
 ```
 
+### Pipeline Diagram
 
 
-####  Clone the repo:
-   ```bash
-   git clone https://github.com/xrootms/Terraform-Nexus-SonarQube-Kubeadm-setup.git
-   cd Terraform-Nexus-SonarQube-Kubeadm-setup
-   ```
-
-#### 2. Copy and edit variables: (Update variable values as needed — VPC, CIDR, public key, region, etc.)
-   ```bash
-   cp terraform.tfvars.example terraform.tfvars
-   ```
-
-#### 3. Initialize Terraform:
-   ```bash
-   terraform init
-   ```
-
-#### 4. Plan and Apply:
-   ```bash
-   terraform plan
-   terraform apply
-   ```
+### Verify the Setup
+✔ Repo cloned  
+✔ tfvars loaded  
+✔ Terraform init OK  
+✔ Checkov scan and checkov-report.xml archived OK  
+✔ Terraform plan OK  
+✔ Terraform apply OK  
+✔ Email notification received with Checkov report ok
 
 #### 5. Get ssh connection for EC2:
 

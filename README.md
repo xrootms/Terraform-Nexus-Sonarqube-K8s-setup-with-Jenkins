@@ -1,6 +1,10 @@
 # Automated Terraform CI/CD Pipeline with Checkov Security Scanning (Jenkins)
 This project focuses on building a fully automated `Infrastructure-as-Code` deployment pipeline using Terraform, integrated with `Jenkins CI/CD` and `Checkov` security scanning.
 
+<p align="center">
+  <img src="./doc/image/tf.drawio.jpg" alt="LEMP Diagram" width="800">
+</p>
+
 ## Overview
 **IaC (Terraform)** 
 The pipeline provisions a complete AWS infrastructure stack that includes:

@@ -14,17 +14,17 @@ output "master_public_ip" {
   value = aws_instance.master.public_ip
 }
 
-output "first_worker_01_public_ip" {
-  value = aws_instance.worker[0].public_ip
-}
+# output "first_worker_01_public_ip" {
+#   value = aws_instance.worker[0].public_ip
+# }
 
 # output "second_worker_02_public_ip" {
 #   value = aws_instance.worker[1].public_ip
 # }
 
-# output "worker_public_ips" {
-#   value = [for w in aws_instance.worker : w.public_ip]                       ##for-expression (like a for loop), Give a list of IDs for all
-# }
+output "worker_public_ips" {
+  value = [for w in aws_instance.worker : w.public_ip]                       ##for-expression (like a for loop), Give a list of IDs for all
+}
 
 
 
@@ -61,12 +61,6 @@ resource "aws_instance" "worker" {
   user_data = var.user_data_install_k8s_worker
 }
 
-
-
-
-# output "worker_public_ips" {
-#   value = [for w in aws_instance.worker : w.public_ip]                       ##for-expression (like a for loop), Give a list of IDs for all
-# }
 
 
 

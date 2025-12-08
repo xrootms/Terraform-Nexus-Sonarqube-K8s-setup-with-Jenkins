@@ -35,7 +35,7 @@ sudo containerd config default | sudo tee /etc/containerd/config.toml >/dev/null
 sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
 sudo systemctl restart containerd
 sudo systemctl enable containerd
-sleep 30
+sleep 20
 
 # --- Install Kubernetes ---
 
@@ -44,6 +44,9 @@ sudo apt install -y apt-transport-https ca-certificates curl
 sudo curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/kubernetes-apt-keyring.gpg
 echo "deb https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 sudo apt update
+sudo apt-get install -y conntrack
+sleep 4
+sudo apt update
 sudo apt install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
-sleep 30
+sleep 4

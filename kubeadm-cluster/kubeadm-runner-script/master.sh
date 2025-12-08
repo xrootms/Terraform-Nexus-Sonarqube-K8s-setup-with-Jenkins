@@ -45,6 +45,9 @@ sudo apt install -y apt-transport-https ca-certificates curl
 sudo curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/kubernetes-apt-keyring.gpg
 echo "deb https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 sudo apt update
+sudo apt-get install -y conntrack
+sleep 4
+sudo apt update
 sudo apt install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 sleep 30
@@ -77,10 +80,17 @@ sleep 30
 sudo kubeadm token create --print-join-command > /tmp/join-command.sh
 
 
+##kubectl get nodes
 #kubectl get pods -n kube-system
 #kubectl get pods -A
+
+
+# ts
+#sudo systemctl restart containerd
+#sudo systemctl restart kubelet
+
 #kubectl get pods -n kube-flannel
-#kubectl get nodes
+#ls -l /etc/cni/net.d
 
 
 

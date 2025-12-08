@@ -36,10 +36,10 @@ sudo systemctl start docker
 sudo usermod -aG docker $USER
 
 
-sleep 30
+#sleep 30
 
 #sudo docker run -d --name nexus -p 8081:8081 sonatype/nexus3:latest      
-sudo docker run -d --name nexus -p 8081:8081 -v nexus-data:/nexus-data sonatype/nexus3:latest
+#sudo docker run -d --name nexus -p 8081:8081 -v nexus-data:/nexus-data sonatype/nexus3:latest
 
 
 #Get Nexus initial password

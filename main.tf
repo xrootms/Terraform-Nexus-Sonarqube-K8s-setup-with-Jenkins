@@ -18,34 +18,35 @@ module "security_groups" {
 }
 
 
-# module "sonar" {
-#   source                    = "./sonar"
-#   ami_id                    = var.ec2_ami_id
-#   instance_type             = "t2.micro"
-#   tag_name                  = "Sonar:Ubuntu 22.04 EC2"
-#   subnet_id                 = tolist(module.networking.devops_proj_1_public_subnets_id)[0]
-#   sg_for_sonar              = [module.security_groups.sg_ec2_sg_ssh_http_https_id, module.security_groups.sg_ec2_sonar_port_9000_id]
-#   enable_public_ip_address  = true
-#   user_data_install_sonar   = templatefile("./sonar/sonar-runner-script/sonar-installer.sh", {})
-#   key_name                  = aws_key_pair.main_key.key_name
-# }
+module "sonar" {
+  source                    = "./sonar"
+  ami_id                    = var.ec2_ami_id
+  instance_type             = "t2.micro"
+  tag_name                  = "Sonar:Ubuntu 22.04 EC2"
+  subnet_id                 = tolist(module.networking.devops_proj_1_public_subnets_id)[0]
+  sg_for_sonar              = [module.security_groups.sg_ec2_sg_ssh_http_https_id, module.security_groups.sg_ec2_sonar_port_9000_id]
+  enable_public_ip_address  = true
+  user_data_install_sonar   = templatefile("./sonar/sonar-runner-script/sonar-installer.sh", {})
+  key_name                  = aws_key_pair.main_key.key_name
+}
 
-# module "nexus" {
-#   source                    = "./nexus"
-#   ami_id                    = var.ec2_ami_id
-#   instance_type             = "t2.micro"
-#   tag_name                  = "Nexus:Ubuntu 22.04 EC2"
-#   subnet_id                 = tolist(module.networking.devops_proj_1_public_subnets_id)[0]
-#   sg_for_nexus              = [module.security_groups.sg_ec2_sg_ssh_http_https_id, module.security_groups.sg_ec2_nexus_port_8081_id]
-#   enable_public_ip_address  = true
-#   user_data_install_nexus   = templatefile("./nexus/nexus-runner-script/nexus-installer.sh", {})
-#   key_name                  = aws_key_pair.main_key.key_name
-# }
+module "nexus" {
+  source                    = "./nexus"
+  ami_id                    = var.ec2_ami_id
+  instance_type             = "t2.micro"
+  tag_name                  = "Nexus:Ubuntu 22.04 EC2"
+  subnet_id                 = tolist(module.networking.devops_proj_1_public_subnets_id)[0]
+  sg_for_nexus              = [module.security_groups.sg_ec2_sg_ssh_http_https_id, module.security_groups.sg_ec2_nexus_port_8081_id]
+  enable_public_ip_address  = true
+  user_data_install_nexus   = templatefile("./nexus/nexus-runner-script/nexus-installer.sh", {})
+  key_name                  = aws_key_pair.main_key.key_name
+}
 
 module "kubeadm-cluster" {
   source                       = "./kubeadm-cluster"
   ami_id                       = var.ec2_ami_id
-  instance_type                = "t3.small"
+  instance_type_master         = "t3.small"
+  instance_type_worker         = "t3.micro"
   tag_cluster_name             = "Devops"
   subnet_id                    = tolist(module.networking.devops_proj_1_public_subnets_id)[0]
   sg_for_k8s                   = [module.security_groups.sg_ec2_sg_ssh_http_https_id, module.security_groups.sg_ec2_k8s_cluster_id]

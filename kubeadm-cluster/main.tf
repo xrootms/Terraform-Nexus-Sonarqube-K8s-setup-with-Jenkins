@@ -1,6 +1,7 @@
 
 variable "ami_id" {}
-variable "instance_type" {}
+variable "instance_type_master" {}
+variable "instance_type_worker" {}
 variable "tag_cluster_name" {}
 variable "subnet_id" {}
 variable "sg_for_k8s" {}
@@ -30,7 +31,7 @@ output "worker_public_ips" {
 
 resource "aws_instance" "master" {
   ami                    = var.ami_id
-  instance_type          = var.instance_type
+  instance_type          = var.instance_type_master
   
   key_name               = var.key_name
   subnet_id              = var.subnet_id
@@ -45,9 +46,9 @@ resource "aws_instance" "master" {
 }
 
 resource "aws_instance" "worker" {
-  count                  = 1
+  count                  = 2
   ami                    = var.ami_id
-  instance_type          = var.instance_type
+  instance_type          = var.instance_type_worker
 
   subnet_id              = var.subnet_id
   key_name               = var.key_name

@@ -153,7 +153,9 @@ pipeline {
 
 ### clicking Build Now 
 
-
+<p align="center">
+  <img src="./doc/image/tf.drawio.jpg" alt="LEMP Diagram" width="800">
+</p>
 
 
 
@@ -166,5 +168,9 @@ pipeline {
 ✔ Terraform apply OK  
 ✔ Email notification received with Checkov report ok
 
-#### 5. Get ssh connection for EC2:
+### 5. Get ssh connection for servers:
+
+<p align="center">
+  <img src="./doc/image/tf.drawio.jpg" alt="LEMP Diagram" width="800">
+</p>
 

@@ -29,6 +29,8 @@ The Jenkins pipeline automates the following stages:
 
 6️. `Terraform Apply` - Applies the Terraform plan to provision or update cloud infrastructure.
 
+7. `Notification` - Email notification receive with Checkov report
+
 ## Prerequisites
 Before Running This project, Make sure you have the following prerequisites ready:
 

@@ -17,12 +17,12 @@ The pipeline provisions a complete AWS infrastructure stack that includes:
 **Pipeline (Jenkins)**
 The Jenkins pipeline automates the following stages:
 
-- 1️ `Git Checkout` - Clones the Terraform repository from GitHub using Jenkins credentials
-- 2️ `Load tfvars` - Loads environment-specific Terraform variable files securely from Jenkins credentials for use in the pipeline.
-- 3️ `Terraform Init` - Initializes Terraform modules and providers for deployment.
-- 4️ `Checkov Security Scan`  - Runs Checkov to detect Terraform misconfigurations and publishes a report.
-- 5️ `Terraform Plan` - Generates a Terraform execution plan to preview infrastructure changes.
-- 6️ `Terraform Apply` - Applies the Terraform plan to provision or update cloud infrastructure.
+1️. `Git Checkout` - Clones the Terraform repository from GitHub using Jenkins credentials
+2️. `Load tfvars` - Loads environment-specific Terraform variable files securely from Jenkins credentials for use in the pipeline.
+3️. `Terraform Init` - Initializes Terraform modules and providers for deployment.
+4️. `Checkov Security Scan`  - Runs Checkov to detect Terraform misconfigurations and publishes a report.
+5️. `Terraform Plan` - Generates a Terraform execution plan to preview infrastructure changes.
+6️. `Terraform Apply` - Applies the Terraform plan to provision or update cloud infrastructure.
 
 ## Prerequisites
 Before Running This project, Make sure you have the following prerequisites ready:

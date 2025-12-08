@@ -10,35 +10,35 @@ This project focuses on building a fully automated `Infrastructure-as-Code` depl
 **IaC (Terraform)** 
 The pipeline provisions a complete AWS infrastructure stack that includes:
 
-- ➡️ A custom `VPC` with `public subnets`, `Internet Gateway`, and `route tables`
-- ➡️ `Security Groups` for SonarQube, Nexus, and Kubernetes cluster nodes
-- ➡️ EC2 instances for `SonarQube`, `Nexus Repository Manager`, and `Kubeadm master/worker nodes` (with User Data installation script)
+- A custom `VPC` with `public subnets`, `Internet Gateway`, and `route tables`
+- `Security Groups` for SonarQube, Nexus, and Kubernetes cluster nodes
+- EC2 instances for `SonarQube`, `Nexus Repository Manager`, and `Kubeadm master/worker nodes` (with User Data installation script)
 
 **Pipeline (Jenkins)**
 The Jenkins pipeline automates the following stages:
 
-- 1️⃣ `Git Checkout` - Clones the Terraform repository from GitHub using Jenkins credentials
-- 2️⃣ `Load tfvars` - Loads environment-specific Terraform variable files securely from Jenkins credentials for use in the pipeline.
-- 3️⃣ `Terraform Init` - Initializes Terraform modules and providers for deployment.
-- 4️⃣ `Checkov Security Scan`  - Runs Checkov to detect Terraform misconfigurations and publishes a report.
-- 5️⃣ `Terraform Plan` - Generates a Terraform execution plan to preview infrastructure changes.
-- 6️⃣ `Terraform Apply` - Applies the Terraform plan to provision or update cloud infrastructure.
+- 1️ `Git Checkout` - Clones the Terraform repository from GitHub using Jenkins credentials
+- 2️ `Load tfvars` - Loads environment-specific Terraform variable files securely from Jenkins credentials for use in the pipeline.
+- 3️ `Terraform Init` - Initializes Terraform modules and providers for deployment.
+- 4️ `Checkov Security Scan`  - Runs Checkov to detect Terraform misconfigurations and publishes a report.
+- 5️ `Terraform Plan` - Generates a Terraform execution plan to preview infrastructure changes.
+- 6️ `Terraform Apply` - Applies the Terraform plan to provision or update cloud infrastructure.
 
 ## Prerequisites
 Before Running This project, Make sure you have the following prerequisites ready:
 
 ### Local / Developer Requirements
-- ➡️ Terraform v1.11.4 installed
-- ➡️ AWS CLI configured with IAM user credentials (Access Key & Secret Key)
-- ➡️ Public and Private Key
+-  Terraform v1.11.4 installed
+-  AWS CLI configured with IAM user credentials (Access Key & Secret Key)
+-  Public and Private Key
 
 ### Jenkins Requirements
 
-- ➡️ Jenkins installed on a server (EC2, VM etc.)
-- ➡️ Required Jenkins plugins: AWS Credentials
-- ➡️ Jenkins credentials configured for: Github Repo., AWS Access Key & Secret Key and *.tfvars file
-- ➡️ Checkov (via pip) Installed 
-- ➡️ Terraform v1.11.4 installed
+-  Jenkins installed on a server (EC2, VM etc.)
+-  Required Jenkins plugins: AWS Credentials
+-  Jenkins credentials configured for: Github Repo., AWS Access Key & Secret Key and *.tfvars file
+-  Checkov (via pip) Installed 
+-  Terraform v1.11.4 installed
 
 ### Create a Jenkins Pipeline Job*
 

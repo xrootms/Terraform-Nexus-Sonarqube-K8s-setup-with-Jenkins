@@ -3,7 +3,7 @@ This project focuses on building a fully automated `Infrastructure-as-Code` depl
 
 ### Diagram
 <p align="center">
-  <img src="./doc/image/tf.cicd-jenkins-c02.jpg" alt="LEMP Diagram" width="800">
+  <img src="./doc/image/tf.cicd-jenkins.jpg" alt="LEMP Diagram" width="800">
 </p>
 
 ## Overview

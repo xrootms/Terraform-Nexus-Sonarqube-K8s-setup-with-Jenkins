@@ -7,15 +7,8 @@ This project focuses on building a fully automated `Infrastructure-as-Code` depl
 </p>
 
 ## Overview
-**IaC (Terraform)** 
-The pipeline provisions a complete AWS infrastructure stack that includes:
 
-- A custom `VPC` with `public subnets`, `Internet Gateway`, and `route tables`
-- `Security Groups` for SonarQube, Nexus, and Kubernetes cluster nodes
-- EC2 instances for `SonarQube`, `Nexus Repository Manager`, and `Kubeadm master/worker nodes` (with User Data installation script)
-
-**Pipeline (Jenkins)**
-The Jenkins pipeline automates the following stages:
+**Pipeline Stages (Jenkins)**
 
 1️. `Git Checkout` - Clones the Terraform repository from GitHub using Jenkins credentials
 
@@ -29,7 +22,20 @@ The Jenkins pipeline automates the following stages:
 
 6️. `Terraform Apply` - Applies the Terraform plan to provision or update cloud infrastructure.
 
-7. `Notification` - Email notification receive with Checkov report
+7. `Notification` - Sends build notifications + Checkov report via email.
+
+## Infrastructure Deployed
+
+*Using Terraform, the pipeline creates:*
+
+- Custom VPC with public subnets, route tables, IGW
+
+- Security groups for SonarQube, Nexus, and Kubernetes nodes
+
+- EC2 instances for SonarQube, Nexus Repository Manager, and Kubeadm (Master/Worker)
+
+- User Data for automated installation and setup
+
 
 ## Prerequisites
 Before Running This project, Make sure you have the following prerequisites ready:

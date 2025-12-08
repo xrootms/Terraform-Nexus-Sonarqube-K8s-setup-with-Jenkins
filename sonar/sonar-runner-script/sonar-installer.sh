@@ -36,15 +36,15 @@ sudo systemctl start docker
 sudo usermod -aG docker $USER
 
 
-sleep 30
+#sleep 30
 
     
-sudo docker run -d --name sonar \
-  -p 9000:9000 \
-  -v sonarqube_data:/opt/sonarqube/data \
-  -v sonarqube_logs:/opt/sonarqube/logs \
-  -v sonarqube_extensions:/opt/sonarqube/extensions \
-  sonarqube:lts-community
+#sudo docker run -d --name sonar \
+#  -p 9000:9000 \
+ # -v sonarqube_data:/opt/sonarqube/data \
+ # -v sonarqube_logs:/opt/sonarqube/logs \
+ # -v sonarqube_extensions:/opt/sonarqube/extensions \
+# sonarqube:lts-community
 
   #sudo docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
 

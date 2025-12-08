@@ -1,4 +1,4 @@
-# Terraform Deployment using Jenkins with Checkov
+# Terraform Deployment Pipeline with Jenkins & Checkov 
 This project focuses on building a fully automated `Infrastructure-as-Code` deployment pipeline using Terraform, integrated with `Jenkins CI/CD` and `Checkov` security scanning.
 
 ### Diagram

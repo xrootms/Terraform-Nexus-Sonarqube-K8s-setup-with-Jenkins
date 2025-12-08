@@ -2,6 +2,8 @@
 This project focuses on building a fully automated `Infrastructure-as-Code` deployment pipeline using Terraform, integrated with `Jenkins CI/CD` and `Checkov` security scanning.
 
 ### Diagram
+*Created an architecture diagram to visualize the workflow.*
+
 <p align="center">
   <img src="./doc/image/tf.cicd-jenkins.jpg" alt="LEMP Diagram" width="800">
 </p>
@@ -154,7 +156,7 @@ pipeline {
 ### clicking Build Now 
 
 <p align="center">
-  <img src="./doc/image/tf.drawio.jpg" alt="LEMP Diagram" width="800">
+  <img src="./doc/image/m" alt="LEMP Diagram" width="800">
 </p>
 
 
@@ -171,6 +173,6 @@ pipeline {
 ### 5. Get ssh connection for servers:
 
 <p align="center">
-  <img src="./doc/image/tf.drawio.jpg" alt="LEMP Diagram" width="800">
+  <img src="./doc/image/m" alt="LEMP Diagram" width="800">
 </p>
 

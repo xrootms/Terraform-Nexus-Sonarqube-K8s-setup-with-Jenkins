@@ -173,6 +173,6 @@ pipeline {
 ### 5. Get ssh connection for servers:
 
 <p align="center">
-  <img src="./doc/image/console-output.png" alt="LEMP Diagram" width="900">
+  <img src="./doc/image/console-output-copy.png" alt="LEMP Diagram" width="900">
 </p>
 

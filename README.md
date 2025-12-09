@@ -178,7 +178,7 @@ pipeline {
 
 
 <p align="center">
-  <img src="./doc/image/console-output-copy.png" alt="LEMP Diagram" width="900">
+  <img src="./doc/image/aes-ec2.png" alt="LEMP Diagram" width="900">
 </p>
 
 

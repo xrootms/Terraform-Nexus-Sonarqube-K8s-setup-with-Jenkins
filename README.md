@@ -156,7 +156,7 @@ pipeline {
 ### clicking Build Now 
 
 <p align="center">
-  <img src="./doc/image/m" alt="LEMP Diagram" width="800">
+  <img src="./doc/image/pipeline-frow.png" alt="LEMP Diagram" width="800">
 </p>
 
 

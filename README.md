@@ -156,7 +156,7 @@ pipeline {
 ### clicking Build Now 
 
 <p align="center">
-  <img src="./doc/image/pipeline-frow.png" alt="LEMP Diagram" width="1000">
+  <img src="./doc/image/pipeline-frow.png" alt="LEMP Diagram" width="900">
 </p>
 
 
@@ -173,6 +173,6 @@ pipeline {
 ### 5. Get ssh connection for servers:
 
 <p align="center">
-  <img src="./doc/image/console-output.png" alt="LEMP Diagram" width="1000">
+  <img src="./doc/image/console-output.png" alt="LEMP Diagram" width="900">
 </p>
 

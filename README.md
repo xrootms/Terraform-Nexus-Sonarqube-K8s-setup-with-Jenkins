@@ -5,7 +5,7 @@ This project focuses on building a fully automated `Infrastructure-as-Code` depl
 *Created an architecture diagram to visualize the workflow.*
 
 <p align="center">
-  <img src="./doc/image/tf.cicd-jenkins.jpg" alt="LEMP Diagram" width="800">
+  <img src="./doc/image/tf.cicd-jenkins.jpg" alt="LEMP Diagram" width="900">
 </p>
 
 ## Overview
@@ -156,7 +156,7 @@ pipeline {
 ### clicking Build Now 
 
 <p align="center">
-  <img src="./doc/image/pipeline-frow.png" alt="LEMP Diagram" width="800">
+  <img src="./doc/image/pipeline-frow.png" alt="LEMP Diagram" width="1000">
 </p>
 
 
@@ -173,6 +173,6 @@ pipeline {
 ### 5. Get ssh connection for servers:
 
 <p align="center">
-  <img src="./doc/image/m" alt="LEMP Diagram" width="800">
+  <img src="./doc/image/console-output.png" alt="LEMP Diagram" width="1000">
 </p>
 

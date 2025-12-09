@@ -176,3 +176,9 @@ pipeline {
   <img src="./doc/image/console-output-copy.png" alt="LEMP Diagram" width="900">
 </p>
 
+
+<p align="center">
+  <img src="./doc/image/console-output-copy.png" alt="LEMP Diagram" width="900">
+</p>
+
+
